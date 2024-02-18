@@ -1,0 +1,21 @@
+:root {
+  --baseFont: system-ui;
+  --baseFontSize: 1.1em;
+  --basePadding: 5px 10px;
+  --baseBackgroundColor: #2B2D30;
+  --baseTextColor: #B8BCC3;
+  --baseBorderColor: #000;
+  --baseShadowColor: #000;
+  --disabeldColor: dimgrey;
+  --accentColor: mediumblue;
+  --activeColor: darkgreen;
+  --warningColor: darkorange;
+  --successColor: darkgreen;
+  --failColor: crimson;
+  --tooltipBackgroundColor: var(--accentColor);
+  --tooltipBorderRadius: 4px;
+  --tooltipFontSize: var(--baseFontSize);
+  --tooltipTextColor: var(--baseTextColor);
+  --tooltipPadding: 7px;
+  --tooltipOffset: 21px;
+}

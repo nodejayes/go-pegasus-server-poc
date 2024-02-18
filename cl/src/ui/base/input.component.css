@@ -1,0 +1,70 @@
+.input::placeholder {
+  color: var(--baseTextColor);
+  opacity: 0.8;
+}
+
+.input,
+.input:focus {
+  color: var(--baseTextColor);
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.input-control {
+  display: flex;
+  border-radius: 5px;
+  border: 2px solid var(--baseBorderColor);
+  background-color: var(--baseBackgroundColor);
+  box-shadow: 4px 4px var(--baseShadowColor);
+  font-size: var(--baseFontSize);
+  font-weight: 600;
+  color: var(--baseTextColor);
+  outline: none;
+  margin: 5px;
+}
+
+.warning {
+  border: 2px solid var(--warningColor);
+  box-shadow: 4px 4px var(--warningColor);
+}
+
+.fail {
+  border: 2px solid var(--failColor);
+  box-shadow: 4px 4px var(--failColor);
+}
+
+.success {
+  border: 2px solid var(--successColor);
+  box-shadow: 4px 4px var(--successColor);
+}
+
+.label-section,
+.control-section {
+  font-size: 15px;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  background-color: var(--accentColor);
+}
+
+.label-section *,
+.control-section * {
+  background-color: transparent;
+}
+
+.input-control .label-section {
+  border-right: 1px solid var(--baseBorderColor);
+}
+
+.input-control .control-section {
+  border-left: 1px solid var(--baseBorderColor);
+}
+
+.input-control input {
+  padding: 10px;
+  flex-grow: 1;
+}

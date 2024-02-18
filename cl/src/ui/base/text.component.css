@@ -1,0 +1,6 @@
+p.cosmic-text {
+  font-family: var(--baseFont);
+  font-size: var(--baseFontSize);
+  padding: 5px;
+  margin: 5px;
+}

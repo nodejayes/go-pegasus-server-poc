@@ -1,0 +1,13 @@
+{
+  "watch": [
+    "./**/*"
+  ],
+  "ignore": [
+    "tmp/**",
+    "cl/dist/**",
+    "cl/node_modules/**",
+    "./**/*_test.go"
+  ],
+  "ext": "go,tpl,tmpl,html,ts,tsx,css",
+  "exec": "make run_build"
+}

@@ -1,0 +1,71 @@
+.cosmic-button {
+  display: inline-block;
+  padding: var(--basePadding);
+  font-size: var(--baseFontSize);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--baseTextColor);
+  background-color: var(--accentColor);
+  border: 2px solid var(--baseBorderColor);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px var(--baseShadowColor);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 4px 2px;
+}
+.cosmic-button:hover {
+  background-color: var(--baseTextColor);
+  color: var(--accentColor);
+  border: 2px solid var(--accentColor);
+  box-shadow: 5px 5px 0px var(--accentColor);
+}
+.cosmic-button:active {
+  background-color: var(--activeColor);
+  box-shadow: none;
+  transform: translateY(4px);
+}
+.cosmic-button:disabled {
+  background-color: var(--disabeldColor) !important;
+  border: 2px solid var(--baseBorderColor) !important;
+  color: var(--baseTextColor) !important;
+  box-shadow: 5px 5px 0px var(--baseShadowColor) !important;
+  cursor: no-drop;
+}
+.cosmic-button-blocking {
+  background: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) calc(50% - 3px),
+    var(--failColor) 50%,
+    rgba(0, 0, 0, 0) calc(50% + 3px),
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  display: initial;
+  transform: translate(-50%);
+  white-space: nowrap;
+  box-shadow: 5px 5px 0px var(--baseShadowColor);
+  font: var(--tooltipFontSize) var(--baseFont);
+  color: var(--tooltipTextColor);
+  background: var(--tooltipBackgroundColor);
+  padding: var(--tooltipPadding);
+  border-radius: var(--tooltipBorderRadius);
+  pointer-events: none;
+  transition: all 0.1s ease-in;
+}
+
+.tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.cosmic-button:hover .tooltip {
+  opacity: 1;
+  display: inline;
+  margin-top: calc(
+    -var(--tooltipPadding) * 2 + -var(--tooltipFontSize) + -var(--tooltipOffset)
+  );
+}

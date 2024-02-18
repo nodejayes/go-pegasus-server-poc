@@ -14,8 +14,11 @@
   --failColor: crimson;
   --tooltipBackgroundColor: var(--accentColor);
   --tooltipBorderRadius: 4px;
-  --tooltipFontSize: var(--baseFontSize);
   --tooltipTextColor: var(--baseTextColor);
+  --tooltipFontSize: var(--baseFontSize);
   --tooltipPadding: 7px;
   --tooltipOffset: 21px;
+  --tooltipFontSizeNegative: -1.1em;
+  --tooltipPaddingNegative: -7px;
+  --tooltipOffsetNegative: -21px;
 }

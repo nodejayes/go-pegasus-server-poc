@@ -66,6 +66,6 @@
   opacity: 1;
   display: inline;
   margin-top: calc(
-    -var(--tooltipPadding) * 2 + -var(--tooltipFontSize) + -var(--tooltipOffset)
+    var(--tooltipPaddingNegative) * 2 + var(--tooltipFontSizeNegative) + var(--tooltipOffsetNegative)
   );
 }

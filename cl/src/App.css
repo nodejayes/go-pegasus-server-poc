@@ -3,6 +3,7 @@
   margin: 0;
   background-color: var(--baseBackgroundColor);
   color: var(--baseTextColor);
+  font-family: var(--baseFont);
 }
 html,
 body {

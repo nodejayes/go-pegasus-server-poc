@@ -2,6 +2,9 @@
   --baseFont: system-ui;
   --baseFontSize: 1.1em;
   --basePadding: 5px 10px;
+  --baseBorderSize: 1px;
+  --baseBorderRadius: 5px;
+  --baseMargin: 7px;
   --baseBackgroundColor: #2B2D30;
   --baseTextColor: #B8BCC3;
   --baseBorderColor: #000;
@@ -12,13 +15,14 @@
   --warningColor: darkorange;
   --successColor: darkgreen;
   --failColor: crimson;
+  --buttonShadowSize: 5px 5px 0px;
   --tooltipBackgroundColor: var(--accentColor);
-  --tooltipBorderRadius: 4px;
   --tooltipTextColor: var(--baseTextColor);
   --tooltipFontSize: var(--baseFontSize);
   --tooltipPadding: 7px;
-  --tooltipOffset: 21px;
   --tooltipFontSizeNegative: -1.1em;
   --tooltipPaddingNegative: -7px;
-  --tooltipOffsetNegative: -21px;
+  --tooltipOffsetNegative: -25px;
+  --tooltipShadowSize: 5px 5px 0px;
+  --inputShadowSize: 5px 5px 0px;
 }

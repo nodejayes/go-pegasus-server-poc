@@ -7,18 +7,20 @@
   text-decoration: none;
   color: var(--baseTextColor);
   background-color: var(--accentColor);
-  border: 2px solid var(--baseBorderColor);
+  border: var(--baseBorderSize) solid var(--baseBorderColor);
   border-radius: 10px;
-  box-shadow: 5px 5px 0px var(--baseShadowColor);
+  box-shadow: none;
   transition: all 0.3s ease;
   cursor: pointer;
-  margin: 4px 2px;
+  margin: var(--baseMargin);
 }
-.cosmic-button:hover {
+.cosmic-button:hover,
+.cosmic-button:focus {
   background-color: var(--baseTextColor);
   color: var(--accentColor);
-  border: 2px solid var(--accentColor);
-  box-shadow: 5px 5px 0px var(--accentColor);
+  border: var(--baseBorderSize) solid var(--accentColor);
+  box-shadow: var(--buttonShadowSize) var(--accentColor);
+  outline: none;
 }
 .cosmic-button:active {
   background-color: var(--activeColor);
@@ -27,9 +29,9 @@
 }
 .cosmic-button:disabled {
   background-color: var(--disabeldColor) !important;
-  border: 2px solid var(--baseBorderColor) !important;
+  border: var(--baseBorderSize) solid var(--baseBorderColor) !important;
   color: var(--baseTextColor) !important;
-  box-shadow: 5px 5px 0px var(--baseShadowColor) !important;
+  box-shadow: none !important;
   cursor: no-drop;
 }
 .cosmic-button-blocking {
@@ -48,14 +50,15 @@
   display: initial;
   transform: translate(-50%);
   white-space: nowrap;
-  box-shadow: 5px 5px 0px var(--baseShadowColor);
+  box-shadow: var(--tooltipShadowSize) var(--baseShadowColor);
   font: var(--tooltipFontSize) var(--baseFont);
   color: var(--tooltipTextColor);
   background: var(--tooltipBackgroundColor);
   padding: var(--tooltipPadding);
-  border-radius: var(--tooltipBorderRadius);
+  border-radius: var(--baseBorderRadius);
   pointer-events: none;
   transition: all 0.1s ease-in;
+  margin: var(--baseMargin);
 }
 
 .tooltip::before {
@@ -65,7 +68,9 @@
 .cosmic-button:hover .tooltip {
   opacity: 1;
   display: inline;
+  margin: var(--baseMargin);
   margin-top: calc(
-    var(--tooltipPaddingNegative) * 2 + var(--tooltipFontSizeNegative) + var(--tooltipOffsetNegative)
+    var(--tooltipPaddingNegative) * 2 + var(--tooltipFontSizeNegative) +
+      var(--tooltipOffsetNegative)
   );
 }

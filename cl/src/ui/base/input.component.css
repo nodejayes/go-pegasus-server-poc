@@ -15,30 +15,48 @@
 
 .input-control {
   display: flex;
-  border-radius: 5px;
-  border: 2px solid var(--baseBorderColor);
+  border-radius: var(--baseBorderRadius);
+  border: var(--baseBorderSize) solid var(--baseBorderColor);
   background-color: var(--baseBackgroundColor);
-  box-shadow: 4px 4px var(--baseShadowColor);
+  box-shadow: none;
   font-size: var(--baseFontSize);
   font-weight: 600;
   color: var(--baseTextColor);
   outline: none;
-  margin: 5px;
+  margin: var(--baseMargin);
+  transition: all 0.3s ease;
+}
+
+.input-control:hover,
+.focus {
+  box-shadow: var(--inputShadowSize) var(--baseShadowColor);
 }
 
 .warning {
-  border: 2px solid var(--warningColor);
-  box-shadow: 4px 4px var(--warningColor);
+  border: var(--baseBorderSize) solid var(--warningColor);
+  box-shadow: none;
+}
+.warning:hover,
+.focusWarning {
+  box-shadow: var(--inputShadowSize) var(--warningColor);
 }
 
 .fail {
-  border: 2px solid var(--failColor);
-  box-shadow: 4px 4px var(--failColor);
+  border: var(--baseBorderSize) solid var(--failColor);
+  box-shadow: none;
+}
+.fail:hover,
+.focusFail {
+  box-shadow: var(--inputShadowSize) var(--failColor);
 }
 
 .success {
-  border: 2px solid var(--successColor);
-  box-shadow: 4px 4px var(--successColor);
+  border: var(--baseBorderSize) solid var(--successColor);
+  box-shadow: none;
+}
+.success:hover,
+.focusSuccess {
+  box-shadow: var(--inputShadowSize) var(--successColor);
 }
 
 .label-section,
@@ -48,6 +66,7 @@
   align-items: center;
   display: flex;
   padding: 10px;
+  border-radius: var(--baseBorderRadius);
   background-color: var(--accentColor);
   user-select: none;
 }

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"net/http"
+
 	"github.com/nodejayes/fitlog_lit/cl"
 	"github.com/nodejayes/fitlog_lit/pkg/api"
-	ginembeddfsmiddleware "github.com/nodejayes/gin-embedd-fs-middleware"
 	"github.com/nodejayes/go-pegasus-server"
+	goservefs "github.com/nodejayes/go-serve-fs"
 )
 
 var AllClients = func(client pegasus.Client) bool {
@@ -13,9 +14,8 @@ var AllClients = func(client pegasus.Client) bool {
 }
 
 func main() {
-	router := gin.Default()
+	router := http.NewServeMux()
 
-	router.Use(ginembeddfsmiddleware.ConnectFS(cl.Files))
 	pegasus.Register(router, &pegasus.Config{
 		ActionUrl:            "/action",
 		EventUrl:             "/events",
@@ -25,6 +25,7 @@ func main() {
 			api.CounterHandler{},
 		},
 	})
+	router.HandleFunc("/", goservefs.ConnectFS(cl.Files))
 
-	router.Run(":40000")
+	http.ListenAndServe(":40000", router)
 }

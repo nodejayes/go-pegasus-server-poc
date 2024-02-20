@@ -2,8 +2,8 @@ package api
 
 import (
 	"encoding/json"
+	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"github.com/nodejayes/fitlog_lit/state"
 	di "github.com/nodejayes/generic-di"
 	"github.com/nodejayes/go-pegasus-server"
@@ -31,12 +31,12 @@ func parse[T any](value any) (T, error) {
 	return target, err
 }
 
-func (ctx CounterHandler) Handler(msg pegasus.Message, c *gin.Context) {
+func (ctx CounterHandler) Handler(msg pegasus.Message, res http.ResponseWriter, req *http.Request) {
 	payload, err := parse[CounterPayload](msg.Payload)
 	if err != nil {
 		return
 	}
-	clientId := c.GetHeader("clientId")
+	clientId := req.Header.Get("clientId")
 	counterStore := di.Inject[state.CounterStore]("clientId")
 	sender := di.Inject[pegasus.EventHander]()
 

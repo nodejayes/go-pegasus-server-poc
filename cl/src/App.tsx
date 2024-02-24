@@ -1,18 +1,10 @@
-import { createSignal, onMount, Show } from "solid-js";
+import { onMount } from "solid-js";
 import "./App.css";
-import CounterComponent from "./counter.component";
-import ButtonComponent from "./ui/base/button.component";
-import CenterSingleComponent from "./ui/layouts/center.single.component";
 import { ServerEventHandler } from "ts-pegasus-client";
-import { InputComponent, InputValidState } from "./ui/base/input.component";
+import { Route, Router } from "@solidjs/router";
+import LoginComponent from "./login.component";
 
 function App() {
-  const [secondCounterVisibility, setSecondCounterVisibility] =
-    createSignal(true);
-
-  const toggleVisibilitySecondCounter = () =>
-    setSecondCounterVisibility(!secondCounterVisibility());
-
   onMount(() => {
     ServerEventHandler.open({
       actionUrl: "/action",
@@ -22,47 +14,10 @@ function App() {
     });
   });
 
-  const logValue1Change = (value: string) => {
-    console.info("value1 has changed to", value);
-  };
-
   return (
-    <CenterSingleComponent>
-      <div>
-        <CounterComponent />
-      </div>
-      <Show when={secondCounterVisibility()}>
-        <div>
-          <CounterComponent disabled={true} />
-        </div>
-      </Show>
-      <ButtonComponent onclick={toggleVisibilitySecondCounter}>
-        Hide Second
-      </ButtonComponent>
-      <InputComponent
-        placeholder="Wert eingeben..."
-        label={<span>Wert</span>}
-        controls={<span>Controls</span>}
-        onValueChange={logValue1Change}
-      />
-      <InputComponent
-        placeholder="Wert eingeben..."
-        label={<span>Wert</span>}
-      />
-      <InputComponent placeholder="Wert eingeben..." />
-      <InputComponent
-        placeholder="Wert eingeben..."
-        valid={InputValidState.SUCCESS}
-      />
-      <InputComponent
-        placeholder="Wert eingeben..."
-        valid={InputValidState.WARNING}
-      />
-      <InputComponent
-        placeholder="Wert eingeben..."
-        valid={InputValidState.FAIL}
-      />
-    </CenterSingleComponent>
+    <Router>
+      <Route path="/login" component={LoginComponent} />
+    </Router>
   );
 }
 

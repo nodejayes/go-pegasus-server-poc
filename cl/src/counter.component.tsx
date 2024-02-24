@@ -1,7 +1,7 @@
 import { Component, JSX, createSignal, onCleanup, onMount } from "solid-js";
 import "./counter.component.css";
-import TextComponent from "./ui/base/text.component";
-import ButtonComponent from "./ui/base/button.component";
+import CosmicText from "./ui/base/text.component";
+import CosmicButton from "./ui/base/button.component";
 import { ServerEventHandler, Subscription } from "ts-pegasus-client";
 
 interface CounterComponentProperties
@@ -51,23 +51,23 @@ const CounterComponent: Component<CounterComponentProperties> = (props) => {
 
   return (
     <>
-      <TextComponent>Counter: {counter()}</TextComponent>
+      <CosmicText>Counter: {counter()}</CosmicText>
       <div>
-        <ButtonComponent
+        <CosmicButton
           style={{ width: "45px", height: "45px" }}
           disabled={props.disabled}
           tooltip="Counter um 1 erhöhen"
           onclick={increment}
         >
           +
-        </ButtonComponent>
-        <ButtonComponent
+        </CosmicButton>
+        <CosmicButton
           style={{ width: "45px", height: "45px" }}
           tooltip="Counter um 1 verringern"
           onclick={decrement}
         >
           -
-        </ButtonComponent>
+        </CosmicButton>
       </div>
     </>
   );

@@ -10,15 +10,10 @@ interface CosmicInputProperties
   placeholder?: string;
   name?: string;
   id?: string;
-  typ?: InputType;
+  obfuscate?: boolean;
   valid?: InputValidState;
   tooltip?: string;
   onValueChange?: (value: string) => void;
-}
-
-enum InputType {
-  TEXT = "text",
-  PASSWORD = "password",
 }
 
 enum InputValidState {
@@ -38,7 +33,7 @@ const CosmicInput: Component<CosmicInputProperties> = (props) => {
   }
 
   const getType = () =>
-    others.typ === InputType.PASSWORD ? "password" : "text";
+    others.obfuscate ? "password" : "text";
   const getStateClass = () => {
     if (others.valid === InputValidState.SUCCESS) {
       return `input-control success ${inputFocus() ? "focusSuccess" : ""}`;
@@ -85,4 +80,4 @@ const CosmicInput: Component<CosmicInputProperties> = (props) => {
   );
 };
 
-export { CosmicInput as InputComponent, InputType, InputValidState };
+export { CosmicInput, InputValidState };

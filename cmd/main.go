@@ -25,7 +25,10 @@ func main() {
 			api.CounterHandler{},
 		},
 	})
-	router.HandleFunc("/", goservefs.ConnectFS(cl.Files))
+	router.HandleFunc("/", goservefs.ConnectFS(cl.Files, &goservefs.Config{
+		UseClientSideRouter: true,
+		MainPath:            "/index.html",
+	}))
 
 	http.ListenAndServe(":40000", router)
 }

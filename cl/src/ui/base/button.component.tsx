@@ -8,7 +8,7 @@ interface ButtonComponentProperties
   tooltip?: string;
 }
 
-const ButtonComponent: Component<ButtonComponentProperties> = (props) => {
+const CosmicButton: Component<ButtonComponentProperties> = (props) => {
   const [local, others] = splitProps(props, ["children"]);
   const buttonClass = () =>
     others.disabled ? "cosmic-button cosmic-button-blocking" : "cosmic-button";
@@ -21,4 +21,4 @@ const ButtonComponent: Component<ButtonComponentProperties> = (props) => {
   );
 };
 
-export default ButtonComponent;
+export default CosmicButton;

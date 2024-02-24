@@ -10,3 +10,5 @@ github.com/nodejayes/go-pegasus-server v0.0.11 h1:z4sKAULB8s+eGc92e5yThwqKSwjXDU
 github.com/nodejayes/go-pegasus-server v0.0.11/go.mod h1:cV3EdgeuuU7tQNC2ipIhtPe1fzm3W9Iv6ymB4se2pfk=
 github.com/nodejayes/go-serve-fs v0.0.1 h1:lBlzyvd7b6bCa6I27QLd5ilCQyK5dH4u1IwTyRS99/8=
 github.com/nodejayes/go-serve-fs v0.0.1/go.mod h1:k6yMMSbeeE0Bm0/R6MV3SPJr4iktoyqg43GWJd5DBuk=
+github.com/nodejayes/go-serve-fs v0.0.2 h1:vdQSUKTaeVyPCRSMyi27d6ACbnEJZszFkibbe1gyskY=
+github.com/nodejayes/go-serve-fs v0.0.2/go.mod h1:k6yMMSbeeE0Bm0/R6MV3SPJr4iktoyqg43GWJd5DBuk=

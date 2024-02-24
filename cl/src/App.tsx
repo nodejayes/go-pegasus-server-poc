@@ -22,6 +22,10 @@ function App() {
     });
   });
 
+  const logValue1Change = (value: string) => {
+    console.info("value1 has changed to", value);
+  };
+
   return (
     <CenterSingleComponent>
       <div>
@@ -35,12 +39,29 @@ function App() {
       <ButtonComponent onclick={toggleVisibilitySecondCounter}>
         Hide Second
       </ButtonComponent>
-      <InputComponent placeholder="Wert eingeben..." label={<span>Wert</span>} controls={<span>Controls</span>} />
-      <InputComponent placeholder="Wert eingeben..." label={<span>Wert</span>} />
+      <InputComponent
+        placeholder="Wert eingeben..."
+        label={<span>Wert</span>}
+        controls={<span>Controls</span>}
+        onValueChange={logValue1Change}
+      />
+      <InputComponent
+        placeholder="Wert eingeben..."
+        label={<span>Wert</span>}
+      />
       <InputComponent placeholder="Wert eingeben..." />
-      <InputComponent placeholder="Wert eingeben..." valid={InputValidState.SUCCESS} />
-      <InputComponent placeholder="Wert eingeben..." valid={InputValidState.WARNING} />
-      <InputComponent placeholder="Wert eingeben..." valid={InputValidState.FAIL} />
+      <InputComponent
+        placeholder="Wert eingeben..."
+        valid={InputValidState.SUCCESS}
+      />
+      <InputComponent
+        placeholder="Wert eingeben..."
+        valid={InputValidState.WARNING}
+      />
+      <InputComponent
+        placeholder="Wert eingeben..."
+        valid={InputValidState.FAIL}
+      />
     </CenterSingleComponent>
   );
 }

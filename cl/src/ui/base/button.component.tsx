@@ -1,5 +1,6 @@
 import "./button.component.css";
-import { Component, JSX, splitProps, Show } from "solid-js";
+import { Component, JSX, splitProps } from "solid-js";
+import CosmicTooltip from "./tooltip.component";
 
 interface ButtonComponentProperties
   extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,13 +12,10 @@ const ButtonComponent: Component<ButtonComponentProperties> = (props) => {
   const [local, others] = splitProps(props, ["children"]);
   const buttonClass = () =>
     others.disabled ? "cosmic-button cosmic-button-blocking" : "cosmic-button";
-  const hasTooltipContent = () => !!others.tooltip;
 
   return (
     <button {...others} class={buttonClass()}>
-      <Show when={hasTooltipContent()}>
-        <span class="tooltip" data-text-initial={others.tooltip}></span>
-      </Show>
+      <CosmicTooltip tooltip={others.tooltip} />
       {local.children}
     </button>
   );

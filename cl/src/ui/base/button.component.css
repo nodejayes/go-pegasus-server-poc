@@ -44,26 +44,6 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
-.tooltip {
-  position: absolute;
-  opacity: 0;
-  display: initial;
-  transform: translate(-50%);
-  white-space: nowrap;
-  box-shadow: var(--tooltipShadowSize) var(--baseShadowColor);
-  font: var(--tooltipFontSize) var(--baseFont);
-  color: var(--tooltipTextColor);
-  background: var(--tooltipBackgroundColor);
-  padding: var(--tooltipPadding);
-  border-radius: var(--baseBorderRadius);
-  pointer-events: none;
-  transition: all 0.1s ease-in;
-  margin: var(--baseMargin);
-}
-
-.tooltip::before {
-  content: attr(data-text-initial);
-}
 
 .cosmic-button:hover .tooltip {
   opacity: 1;

@@ -88,3 +88,13 @@
   padding: 10px;
   flex-grow: 1;
 }
+
+.input-control:hover .tooltip {
+  opacity: 1;
+  display: inline;
+  margin: var(--baseMargin);
+  margin-top: calc(
+    var(--tooltipPaddingNegative) * 2 + var(--tooltipFontSizeNegative) +
+      var(--tooltipOffsetNegative)
+  );
+}

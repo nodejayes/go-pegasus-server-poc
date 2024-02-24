@@ -1,7 +1,7 @@
 import { Component, JSX, createSignal, onCleanup, onMount } from "solid-js";
 import "./counter.component.css";
-import CosmicText from "./ui/base/text.component";
-import CosmicButton from "./ui/base/button.component";
+import CosmicText from "./ui/base/text";
+import CosmicButton from "./ui/base/button";
 import { ServerEventHandler, Subscription } from "ts-pegasus-client";
 
 interface CounterComponentProperties

@@ -1,10 +1,11 @@
 import { Component } from "solid-js";
-import CenterSingleComponent from "./ui/layouts/center.single.component";
+import CenterSingleComponent from "./ui/layouts/center.single";
 import CosmicPanel from "./ui/base/panel";
-import { CosmicInput } from "./ui/base/input.component";
+import { CosmicInput } from "./ui/base/input";
 
 import "./login.component.css";
-import CosmicButton from "./ui/base/button.component";
+import CosmicButton from "./ui/base/button";
+import CosmicCheckbox from "./ui/base/checkbox";
 
 interface LoginComponentProperties {}
 
@@ -19,6 +20,7 @@ const LoginComponent: Component<LoginComponentProperties> = () => {
         label={passwordLabel()}
         obfuscate={true}
       />
+      <CosmicCheckbox />
       <CosmicButton>Anmelden</CosmicButton>
     </form>
   );

@@ -1,5 +1,5 @@
 import { Component, JSX, Show, splitProps } from 'solid-js';
-import './tooltip.component.css';
+import './tooltip.css';
 
 interface CosmicTooltipProperties extends JSX.HTMLAttributes<HTMLSpanElement> {
   tooltip?: string;

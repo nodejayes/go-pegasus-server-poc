@@ -1,6 +1,6 @@
-import "./button.component.css";
+import "./button.css";
 import { Component, JSX, splitProps } from "solid-js";
-import CosmicTooltip from "./tooltip.component";
+import CosmicTooltip from "./tooltip";
 
 interface ButtonComponentProperties
   extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {

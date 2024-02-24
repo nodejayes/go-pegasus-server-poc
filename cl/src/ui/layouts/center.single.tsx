@@ -1,5 +1,5 @@
 import { Component, JSX } from "solid-js";
-import "./center.single.component.css";
+import "./center.single.css";
 
 interface CenterSingleComponentProperties extends JSX.HTMLAttributes<HTMLDivElement> {}
 

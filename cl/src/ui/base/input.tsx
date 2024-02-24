@@ -1,7 +1,7 @@
 import { Component, JSX, Show, createSignal, splitProps } from "solid-js";
-import "./input.component.css";
+import "./input.css";
 import { v4 } from "uuid";
-import CosmicTooltip from "./tooltip.component";
+import CosmicTooltip from "./tooltip";
 
 interface CosmicInputProperties
   extends JSX.InputHTMLAttributes<HTMLInputElement> {
@@ -32,8 +32,7 @@ const CosmicInput: Component<CosmicInputProperties> = (props) => {
     others.id = v4();
   }
 
-  const getType = () =>
-    others.obfuscate ? "password" : "text";
+  const getType = () => (others.obfuscate ? "password" : "text");
   const getStateClass = () => {
     if (others.valid === InputValidState.SUCCESS) {
       return `input-control success ${inputFocus() ? "focusSuccess" : ""}`;
